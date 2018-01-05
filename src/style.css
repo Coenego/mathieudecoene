@@ -1,0 +1,64 @@
+:root{
+  --bg: #0b0e14;   /* deep blue-grey */
+  --fg: #e8eaef;   /* light grey text */
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#fdfdfd;
+    --fg:#111;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0
+}
+
+body {
+  display: grid; place-items: center;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+canvas#bg {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  z-index: -1; display: block; background: var(--bg);
+}
+
+.fallback::before{
+  content: ''; position: fixed; inset: -20vmax; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(35vmax 35vmax at 30% 40%, #1c2430 50%, transparent 80%),
+    radial-gradient(30vmax 30vmax at 70% 60%, #2d3642 45%, transparent 80%),
+    radial-gradient(40vmax 40vmax at 50% 20%, #3b4653 40%, transparent 80%);
+  filter: blur(60px) saturate(1.1);
+  animation: slowspin 80s linear infinite;
+}
+
+@keyframes slowspin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fallback::before {
+    animation: none
+  }
+}
+
+main {
+  padding: 4svh 4vw;
+}
+
+h1 {
+  font-size: clamp(3rem, 14vw, 9rem);
+  margin: 0; text-transform: lowercase;
+  letter-spacing:.04em; text-align:center;
+  text-shadow: 0 0 .4em rgb(255, 255, 255 / 80%);
+}

@@ -1,0 +1,25 @@
+{
+  "name": "mathieudecoene",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "lint": "npm run lint:ts && npm run lint:styles",
+    "lint:ts": "eslint .",
+    "lint:styles": "stylelint \"src/**/*.{css,scss,sass}\"",
+    "lint:styles:fix": "stylelint \"src/**/*.{css,scss,sass}\" --fix"
+  },
+  "devDependencies": {
+    "@stylistic/stylelint-plugin": "^4.0.0",
+    "eslint": "^9.34.0",
+    "stylelint": "^16.23.1",
+    "stylelint-config-standard-scss": "^15.0.1",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.40.0",
+    "vite": "^7.1.3",
+    "vite-plugin-stylelint": "^6.0.2"
+  }
+}
