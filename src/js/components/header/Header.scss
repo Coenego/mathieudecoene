@@ -1,0 +1,51 @@
+/**
+ * Header
+ */
+
+@import 'settings/settings.colours';
+
+:local(.c-header) {
+    flex: 1;
+    flex-direction: column;
+    padding: 1rem;
+    position: absolute;
+    top: 2rem;
+    z-index: 5;
+
+    @media (min-width: 1024px) {
+        left: 4rem;
+        top: 4rem;
+    }
+
+
+    /* CHILDREN */
+
+    &__title,
+    &__subtitle {
+        font-weight: 300;
+        text-align: center;
+
+        @media (min-width: 1024px) {
+            text-align: left;
+        }
+    }
+
+    &__title {
+        color: rgba(255, 255, 255, .85);
+        font-size: 2rem;
+        letter-spacing: .05em;
+        margin: 0 0 .25rem;
+
+        a {
+            border-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    &__subtitle {
+        color: rgba(255, 255, 255, .7);
+        font-size: 1rem;
+        letter-spacing: .2em;
+        margin: 0 0 0 .075rem;
+    }
+}

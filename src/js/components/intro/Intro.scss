@@ -1,0 +1,44 @@
+/**
+ * Intro
+ */
+
+@import 'settings/settings.colours';
+
+:local(.c-intro) {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+
+    /* MODIFIERS */
+
+    &.is-complete &__label {
+        animation: disappear-width .5s cubic-bezier(0, 0.5, .5, .9);
+        width: 0;
+    }
+
+
+    /* CHILDREN */
+
+    &__label {
+        animation: appear-width .75s cubic-bezier(0, 0.5, .5, .9);
+        color: rgba(255,255,255,.7);
+        font-weight: 300;
+        font-size: .85rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: all .25s ease-in-out;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    &__guide {
+        margin-bottom: 2rem;
+    }
+
+    &__guide:hover + &__label,
+    &__guide.is-large + &__label {
+        margin-top: 2rem;
+        opacity: 0;
+    }
+}

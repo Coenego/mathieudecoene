@@ -1,0 +1,30 @@
+/**
+ * Overlay
+ */
+
+@import 'settings/settings.colours';
+
+:local(.c-overlay) {
+    background-color: rgba(0, 0, 0, .95);
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+
+    /* CHILDREN */
+
+    &__close {
+        bottom: 4rem;
+        color: rgba(255, 255, 255, .95);
+        font-size: .85rem;
+        position: absolute;
+
+        @media (min-width: 1024px) {
+            right: 4rem;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+/**
+ * COMPONENTS - CENSOR
+ */
+
+.c-censor {
+    display: inline-block;
+    position: relative;
+}
+
+
+/* MODIFIERS */
+
+.c-censor.is-visible:before {
+    animation: shrink-censor .75s cubic-bezier(.71, .02, .18, 1);
+    width: 0;
+}
+
+
+/* CHILDREN */
+
+.c-censor:before {
+    background-color: rgba(255, 255, 255, .95);
+    bottom: -5px;
+    content: '';
+    margin-left: -5px;
+    pointer-events: all;
+    position: absolute;
+    top: 7px;
+    transition: width .35s ease-in-out .25s;
+    width: 100%;
+    z-index: 1;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "mathieudecoene",
+  "description": "Mathieu Decoene",
+  "version": "0.0.1",
+  "dependencies": {
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "babel-core": "latest",
+    "babel-loader": "latest",
+    "babel-preset-env": "latest",
+    "babel-preset-react": "latest",
+    "copy-webpack-plugin": "latest",
+    "css-loader": "latest",
+    "extract-text-webpack-plugin": "latest",
+    "file-loader": "latest",
+    "html-webpack-plugin": "latest",
+    "node-sass": "latest",
+    "postcss-loader": "latest",
+    "sass-loader": "latest",
+    "style-loader": "latest",
+    "svg-inline-loader": "latest",
+    "url-loader": "latest",
+    "webpack": "latest",
+    "webpack-dev-server": "latest",
+    "webpack-manifest-plugin": "latest",
+    "webpack-merge": "latest"
+  },
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "NODE_ENV=production webpack --progress"
+  }
+}

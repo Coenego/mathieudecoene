@@ -1,0 +1,17 @@
+/**
+ * OBJECTS - LIST
+ */
+
+.o-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+
+
+    /* MODIFIERS */
+
+    &.o-list--inline {
+        flex-direction: row;
+    }
+}

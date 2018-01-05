@@ -1,0 +1,30 @@
+/**
+ * Footer
+ */
+
+@import 'settings/settings.colours';
+
+:local(.c-footer) {
+    bottom: 2rem;
+    color: rgba(255, 255, 255, .7);
+    flex: 1;
+    font-size: .85rem;
+    font-weight: 300;
+    letter-spacing: .1em;
+    padding: 1rem;
+    position: absolute;
+    z-index: 5;
+
+    @media (min-width: 1024px) {
+        bottom: 4rem;
+        left: 4rem;
+        right: 4rem;
+    }
+
+
+    /* CHILDREN */
+
+    &__list li:not(:last-of-type) {
+        margin-right: 1rem;
+    }
+}
