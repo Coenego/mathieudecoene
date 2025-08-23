@@ -3,7 +3,14 @@ const canvas = document.getElementById('bg') as HTMLCanvasElement | null;
 
 if (!canvas) throw new Error('Canvas #bg not found');
 
-const supportsOffscreen = !!(window as any).OffscreenCanvas && !!window.Worker;
+interface WindowWithOffscreen extends Window {
+  OffscreenCanvas?: typeof OffscreenCanvas;
+  Worker?: typeof Worker;
+}
+
+const supportsOffscreen =
+  (window as WindowWithOffscreen).OffscreenCanvas !== undefined &&
+  (window as WindowWithOffscreen).Worker !== undefined;
 
 if (!prefersReduced && supportsOffscreen) {
   // Vite-friendly worker import (bundled & hashed in build)
@@ -14,7 +21,7 @@ if (!prefersReduced && supportsOffscreen) {
 
   // Transfer control to worker
   // Note: transferControlToOffscreen must be called before postMessage with canvas
-  const off = (canvas as any).transferControlToOffscreen();
+  const off = canvas.transferControlToOffscreen();
   worker.postMessage({
     type: 'init',
     canvas: off,
